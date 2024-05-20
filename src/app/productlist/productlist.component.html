@@ -1,0 +1,30 @@
+
+<div class="maincreate">
+   <article>
+    <a routerLink="create" class="add">Add New</a>
+    <h1>List of Products</h1>
+    <div>
+        
+        
+            <table border="1" rules="all">
+                <tr>
+                <th class="td">NAME</th>
+                <th class="td">CATEGORY</th>
+                <th class="td">PRICE</th>
+                <th class="td">VIEW DETAILES</th>
+            </tr>
+            <tr *ngFor="let product of products">
+                <td class="td">{{product.pname}}</td>
+                <td class="td">{{product.category}}</td>
+                <td class="td">{{product.pprice | currency:"INR"}}</td>
+                <td class="td"><a routerLink="details/{{product.id}}" class="view">View</a></td>
+                
+            </tr>
+       
+        </table>
+      
+       
+    
+    </div>
+</article>
+</div>

@@ -1,0 +1,50 @@
+
+<div class="maincreate">
+    <article>
+<h1>Add New Product</h1>
+
+
+<form (ngSubmit)="save()" #f="ngForm">
+
+    <tr>
+        <td>Product Name</td>
+        <td> <input type="text"  name="pname" [(ngModel)]="product.pname" required minlength="3" 
+            maxlength="100" #pn="ngModel"> </td>
+            <div *ngIf="pn.invalid && (pn.touched || pn.dirty)">
+
+                <p *ngIf="pn.errors?.['required']"> Enter product name</p>
+                <p *ngIf="pn.errors?.['minlength']"> Enter atleast 3 chars</p>
+        
+        
+            </div>
+    </tr>
+   
+    <tr>
+        <td>Product Category</td>
+        <td> <select name="category" [(ngModel)]="product.category" #cat="ngModel">
+            <option *ngFor="let category of categories">{{category}}</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Product Price</td>
+        <td><input type="number" name="price" [(ngModel)]="product.pprice" required min="1"
+             max="100000" #prc="ngModel"></td>
+    </tr>
+   
+
+    
+    
+    
+    
+
+   
+        <input type="submit" value="Save" class="add">
+        <a routerLink="/" class="add">Home</a>
+   
+</form>
+
+
+
+
+</article>
+</div>

@@ -1,0 +1,32 @@
+<div class="maincreate">
+    <article>
+<h1>Edit  Product</h1>
+<form (ngSubmit)="update()" #f="ngForm">
+    <tr>
+        <td>Product Name</td>
+        <td> <input type="text" name="pname" [(ngModel)]="product.pname" 
+            required minlength="3" maxlength="100" #pn="ngModel"> </td>
+    </tr>
+       <tr>
+        <td>Product Category</td>
+        <td>  <select name="category" [(ngModel)]="product.category" #cat="ngModel">
+            <option *ngFor="let category of categories">{{category}}</option>
+        </select></td>
+       </tr>
+       
+    <tr>
+        <td>Product Price</td>
+        <td> <input type="number" name="price" [(ngModel)]="product.pprice" 
+            required min="1" max="100000" #prc="ngModel"></td>
+    </tr>
+    
+   
+   
+
+   
+        <input type="submit" value="Save" class="add">
+        <a routerLink="/" class="add" id="Home">Home</a>
+   
+</form>
+</article>
+</div>

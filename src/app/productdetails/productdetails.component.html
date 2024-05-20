@@ -1,0 +1,24 @@
+<div class="maincreate">
+    <article>
+    <h1>Details of {{product.pname}}</h1>
+    <table border="1" rules="all">
+    
+    <tr>
+        <td>NAME :</td>
+        <td>{{product.pname}}</td>
+    </tr>
+    <tr>
+        <td>CATEGORY :</td>
+        <td>{{product.category}}</td>
+    </tr>
+   <tr>
+    <td>PRICE :</td>
+    <td>{{product.pprice | currency:"INR"}}</td>
+   </tr>
+</table>
+    <a routerLink="/" class="add">Home</a>
+    <a routerLink="/edit/{{product.id}}" class="add">Edit</a>
+    <button (click)="remove()" class="add">Delete</button>
+
+</article>
+</div>
